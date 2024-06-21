@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { AuthContext } from '../../Context/AuthContext';
 import { CartContext } from '../../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 
 const PayOnline = () => {
   const {loggedCart,setCartState} = useContext(CartContext)
@@ -53,6 +53,9 @@ const PayOnline = () => {
 
   return (
    <>
+   <Helmet>
+    <title>Pay Online</title>
+   </Helmet>
     <form onSubmit={formik.handleSubmit} autoComplete='off'>
       <div className='container flex flex-col '>
         <div className='my-3 mx-20'>

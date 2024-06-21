@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import * as yup from 'yup';
 import { AuthContext } from '../../Context/AuthContext';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
   const {setToken} = useContext(AuthContext)
@@ -68,6 +69,9 @@ const Register = () => {
   });
   return (
     <>
+    <Helmet>
+      <title>Register | E-Commerce App</title>
+    </Helmet>
       <div>
         <Toaster />
       </div>

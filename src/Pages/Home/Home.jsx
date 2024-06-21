@@ -5,11 +5,15 @@ import banner1 from '../../assets/images/grocery-banner.png';
 import banner2 from '../../assets/images/grocery-banner-2.jpeg';
 import Categories from '../../Components/Categories/Categories';
 import Products from '../../Components/Products/Products';
-
+import {Helmet} from "react-helmet";
 
 const Home = () => {
   return (
     <>
+    <Helmet>
+        <title>Home | E-Commerce App</title>
+        <meta name="description" content="Welcome to our E-Commerce App" />
+    </Helmet>
       <div className='container my-5 '>
         <div className='grid grid-cols-3 '>
           <div className='col-span-2 overflow-hidden'>

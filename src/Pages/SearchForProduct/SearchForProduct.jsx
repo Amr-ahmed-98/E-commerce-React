@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Products from "../../Components/Products/Products"
+import {Helmet} from "react-helmet";
 
 const SearchForProduct = () => {
   const [searchInput,setSearchInput] = useState('')
@@ -8,6 +9,11 @@ const SearchForProduct = () => {
     
   }
   return (
+ <>
+  <Helmet>
+    <title>Search for Product</title>
+    <meta name="description" content="Search for products on our e-commerce website" />
+  </Helmet>
   <div className="container">
       <div className="flex flex-col justify-center items-center">
         <div>
@@ -24,6 +30,7 @@ const SearchForProduct = () => {
         </div>
     </div>
   </div>
+ </>
   )
 }
 

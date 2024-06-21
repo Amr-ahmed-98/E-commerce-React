@@ -6,6 +6,7 @@ import { AuthContext } from '../../Context/AuthContext';
 import { CartContext } from '../../Context/CartContext';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const PayCash = () => {
   const {loggedCart} = useContext(CartContext)
@@ -55,6 +56,9 @@ const PayCash = () => {
 
   return (
    <>
+   <Helmet>
+      <title>Pay Cash</title>
+   </Helmet>
    <Toaster/>
     <form onSubmit={formik.handleSubmit} autoComplete='off'>
       <div className='container flex flex-col '>

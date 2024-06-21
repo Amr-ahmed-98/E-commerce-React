@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import Loader from "../../Components/Loader/Loader"
-
+import {Helmet} from "react-helmet";
 const Categories = () => {
     const {data,isLoading,error} = useQuery({
         queryKey:['categories'],
@@ -19,6 +19,10 @@ const Categories = () => {
     }
 
     return (
+     <>
+      <Helmet>
+        <title>Categories | E-Commerce App</title>
+      </Helmet>
        <div className="container">
          <div className="grid grid-cols-3 gap-5 overflow-hidden" >
          {data.data.data.map((category)=>(
@@ -29,6 +33,7 @@ const Categories = () => {
             ))}
         </div>
        </div>
+     </>
     )
 }
 

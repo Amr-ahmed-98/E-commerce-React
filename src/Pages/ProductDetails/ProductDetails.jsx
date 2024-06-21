@@ -5,7 +5,7 @@ import Loader from '../../Components/Loader/Loader';
 import ImageGallery from 'react-image-gallery';
 import { AuthContext } from '../../Context/AuthContext';
 import { CartContext } from '../../Context/CartContext';
-
+import { Helmet } from'react-helmet';
 const ProductDetails = () => {
   const [images, setImages] = useState([]);
   const [product, setProduct] = useState(null);
@@ -37,6 +37,9 @@ const ProductDetails = () => {
 
   return (
     <>
+    <Helmet>
+      <title>{product.data.title}</title>
+    </Helmet>
       <div className='grid grid-cols-12 gap-20 mt-20'>
         <div className='col-span-5'>
           <ImageGallery

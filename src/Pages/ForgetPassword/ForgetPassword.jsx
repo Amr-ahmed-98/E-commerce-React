@@ -4,6 +4,7 @@ import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
+import {Helmet} from "react-helmet";
 
 const ForgetPassword = () => {
   const [isSubmited, setIsSubmitted] = useState(false);
@@ -90,6 +91,10 @@ const ForgetPassword = () => {
     }
   })
   return (
+    <>
+    <Helmet>
+        <title>Forget Password</title>
+    </Helmet>
     <div>
       <Toaster />
       <div className='container mt-10'>
@@ -178,6 +183,7 @@ const ForgetPassword = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext"
 import { AuthContext } from "../../Context/AuthContext"
 import { jwtDecode } from "jwt-decode"
 import axios from "axios"
-
+import {Helmet} from "react-helmet";
 const AllOrders = () => {
     const {cartState,clearCart,loggedCart,setCartEmpty} = useContext(CartContext)
     const {token} = useContext(AuthContext)
@@ -30,6 +30,9 @@ const AllOrders = () => {
    },[getUserOrders])
   return (
    <>
+    <Helmet>
+        <title>All Orders</title>
+    </Helmet>
    <div className="container">
     {order && order.map((order)=>(
         <div key={order.id} className="grid grid-12 border-4 border-main shadow-sm rounded-md my-4">

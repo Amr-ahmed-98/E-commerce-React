@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext";
 import { AuthContext } from "../../Context/AuthContext";
 
 import {  Link, useNavigate } from "react-router-dom";
-
+import {Helmet} from "react-helmet";
 const Cart = () => {
   const {getLoggedCart,loggedCart,AddToCart,RemoveFromCart,minusProduct,clearCart,clear,setCartEmpty} = useContext(CartContext);
   const {token} = useContext(AuthContext)
@@ -33,6 +33,9 @@ const Cart = () => {
  }  
   return (
     <>
+    <Helmet>
+      <title>FreshCart - Shopping Cart</title>
+    </Helmet>
       {loggedCart  ?  (
         <div className="container bg-slate-300 min-h-screen w-full">
           <div className="px-10">
