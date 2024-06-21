@@ -1,0 +1,6 @@
+.nav-active  ul  li  a{
+    @apply w-0 transition-all
+}
+.nav-active :global(.active){
+    @apply w-full border-b-4 border-main transition-all pb-1 rounded-md
+}
